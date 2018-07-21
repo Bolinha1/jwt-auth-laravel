@@ -17,4 +17,5 @@ Route::post('login', 'Admin\AuthController@login');
 
 Route::group(['middleware' => ['jwt.auth']], function() {
     Route::get('home', 'Admin\AuthController@logado');
+    Route::get('refresh', 'Admin\AuthController@refreshToken');
 });
